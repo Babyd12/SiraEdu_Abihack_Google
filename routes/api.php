@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\ApiController;
 use App\Http\Controllers\API\RoleController;
+use App\Http\Controllers\VideoController;
 use App\Http\Middleware\isSuperAdminMiddleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -34,3 +35,4 @@ return response()->json([
 Route::get('documentation', function () {
     return view('api-docs.index');
 });
+Route::post('/create-video',[VideoController::class,'store']);

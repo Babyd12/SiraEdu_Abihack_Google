@@ -716,6 +716,102 @@
                     }
                 ]
             }
+        },
+        "/api/create-video": {
+            "post": {
+                "summary": "",
+                "tags": [
+                    "Videos"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "titre": {
+                                        "type": "string"
+                                    },
+                                    "prompt": {
+                                        "type": "string"
+                                    },
+                                    "aspect_ratio": {
+                                        "type": "string",
+                                        "enum": [
+                                            "16:9",
+                                            "4:3",
+                                            "1:1",
+                                            "9:16"
+                                        ]
+                                    },
+                                    "langue": {
+                                        "type": "string",
+                                        "enum": [
+                                            "fr",
+                                            "en"
+                                        ]
+                                    },
+                                    "classe_id": {
+                                        "type": "string"
+                                    },
+                                    "matiere_id": {
+                                        "type": "string"
+                                    },
+                                    "professeur_id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "titre",
+                                    "prompt",
+                                    "langue",
+                                    "classe_id",
+                                    "matiere_id",
+                                    "professeur_id"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
         }
     }
 }

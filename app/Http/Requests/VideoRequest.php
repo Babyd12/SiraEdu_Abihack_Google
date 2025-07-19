@@ -11,7 +11,7 @@ class VideoRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -19,10 +19,17 @@ class VideoRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
+ 
     public function rules(): array
     {
         return [
-            //
+            'titre' => 'required|string|max:255',
+            'prompt' => 'required|string',
+            'aspect_ratio' => 'nullable|in:16:9,4:3,1:1,9:16',
+            'langue' => 'required|in:fr,en',
+            'classe_id' => 'required|exists:classes,id',
+            'matiere_id' => 'required|exists:matieres,id',
+            'professeur_id' => 'required|exists:users,id',
         ];
     }
 }

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Eleve;
 use App\Models\Classe;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class EleveSeeder extends Seeder
@@ -21,6 +22,8 @@ class EleveSeeder extends Seeder
                 Eleve::create([
                     'nom' => "Élève $i",
                     'prenom' => "Prenom $i",
+                    "email"=> "eleve$i@example.com",
+                    "password"=> Hash::make('password'),
                     'classe_id' => $classe->id,
                 ]);
             }

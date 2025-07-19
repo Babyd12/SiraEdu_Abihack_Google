@@ -19,6 +19,7 @@ class EcoleSeeder extends Seeder
         foreach ($responsables as $index => $user) {
             Ecole::create([
                 'nom' => "Ecole " . chr(65 + $index),
+                'logo'=>"zzzzzz",
                 'user_id' => $user->id,
             ]);
         }
