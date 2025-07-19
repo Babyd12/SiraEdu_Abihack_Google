@@ -31,3 +31,6 @@ return response()->json([
     'error' => 'Unauthenticated',
 ], 404);
 })->name('login');
+Route::get('documentation', function () {
+    return view('api-docs.index');
+});

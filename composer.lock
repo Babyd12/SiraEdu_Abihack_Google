@@ -4,8 +4,66 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65c91dd2b44184c09306627d9c25e99b",
+    "content-hash": "f6dde95c2430ec0a1ec16567c076016c",
     "packages": [
+        {
+            "name": "bamagid/laraswagger",
+            "version": "v1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bamagid/Laraswager.git",
+                "reference": "36b2065d438707a4631c98cdff51b66a60db16e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bamagid/Laraswager/zipball/36b2065d438707a4631c98cdff51b66a60db16e9",
+                "reference": "36b2065d438707a4631c98cdff51b66a60db16e9",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^11.0 || ^10.0 || ^9.0 || >=8.40.0 || ^7.0",
+                "php": "^7.2 || ^8.0",
+                "swagger-api/swagger-ui": "^3.0 || >=4.1.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaraSwagger\\SwaggerGeneratorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaraSwagger\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Magid Ba",
+                    "email": "bamagid60@gmail.com"
+                }
+            ],
+            "keywords": [
+                "api",
+                "documentation",
+                "laraswagger",
+                "laravel",
+                "openapi",
+                "swagger",
+                "swagger-ui",
+                "ui"
+            ],
+            "support": {
+                "issues": "https://github.com/bamagid/Laraswager/issues",
+                "source": "https://github.com/bamagid/Laraswager/tree/v1.0.6"
+            },
+            "time": "2025-04-28T13:34:20+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.11.0",
@@ -1044,6 +1102,74 @@
                 }
             ],
             "time": "2023-12-03T19:50:20+00:00"
+        },
+        {
+            "name": "ibex/crud-generator",
+            "version": "v2.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/awais-vteams/laravel-crud-generator.git",
+                "reference": "58016531ea47cafe856288fcef6069a60abc1034"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/awais-vteams/laravel-crud-generator/zipball/58016531ea47cafe856288fcef6069a60abc1034",
+                "reference": "58016531ea47cafe856288fcef6069a60abc1034",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^10.30|^11.0|^12.0",
+                "php": "^8.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ibex\\CrudGenerator\\CrudServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ibex\\CrudGenerator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "M Awais",
+                    "email": "asargodha@gmail.com"
+                }
+            ],
+            "description": "Laravel CRUD Generator",
+            "keywords": [
+                "alpine js",
+                "bootstrap css",
+                "crud",
+                "crud generator",
+                "laravel",
+                "laravel crud generator",
+                "laravel package",
+                "tailwind css"
+            ],
+            "support": {
+                "issues": "https://github.com/awais-vteams/laravel-crud-generator/issues",
+                "source": "https://github.com/awais-vteams/laravel-crud-generator/tree/v2.1.3"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/awais-vteams",
+                    "type": "github"
+                },
+                {
+                    "url": "https://ko-fi.com/mawais",
+                    "type": "ko_fi"
+                }
+            ],
+            "time": "2025-02-25T04:59:22+00:00"
         },
         {
             "name": "laravel/framework",
@@ -3528,6 +3654,67 @@
                 "source": "https://github.com/stella-maris-solutions/clock/tree/0.1.7"
             },
             "time": "2022-11-25T16:15:06+00:00"
+        },
+        {
+            "name": "swagger-api/swagger-ui",
+            "version": "v5.27.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swagger-api/swagger-ui.git",
+                "reference": "7b86721ad6494216d8bad0540c737efe1885688c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swagger-api/swagger-ui/zipball/7b86721ad6494216d8bad0540c737efe1885688c",
+                "reference": "7b86721ad6494216d8bad0540c737efe1885688c",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Anna Bodnia",
+                    "email": "anna.bodnia@gmail.com"
+                },
+                {
+                    "name": "Buu Nguyen",
+                    "email": "buunguyen@gmail.com"
+                },
+                {
+                    "name": "Josh Ponelat",
+                    "email": "jponelat@gmail.com"
+                },
+                {
+                    "name": "Kyle Shockey",
+                    "email": "kyleshockey1@gmail.com"
+                },
+                {
+                    "name": "Robert Barnwell",
+                    "email": "robert@robertismy.name"
+                },
+                {
+                    "name": "Sahar Jafari",
+                    "email": "shr.jafari@gmail.com"
+                }
+            ],
+            "description": " Swagger UI is a collection of HTML, Javascript, and CSS assets that dynamically generate beautiful documentation from a Swagger-compliant API.",
+            "homepage": "http://swagger.io",
+            "keywords": [
+                "api",
+                "documentation",
+                "openapi",
+                "specification",
+                "swagger",
+                "ui"
+            ],
+            "support": {
+                "issues": "https://github.com/swagger-api/swagger-ui/issues",
+                "source": "https://github.com/swagger-api/swagger-ui/tree/v5.27.0"
+            },
+            "time": "2025-07-16T12:18:52+00:00"
         },
         {
             "name": "symfony/clock",
