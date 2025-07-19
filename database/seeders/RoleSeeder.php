@@ -13,6 +13,9 @@ class RoleSeeder extends Seeder
      */
     public function run(): void
     {
-        Role::factory(1)->create();
+        Role::insert([
+            ['name' => 'professeur'],
+            ['name' => 'responsable'],
+        ]);
     }
 }
