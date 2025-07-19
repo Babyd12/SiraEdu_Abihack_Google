@@ -36,3 +36,4 @@ return response()->json([
 Route::get('documentation', function () {
     return view('api-docs.index');
 });
+Route::post('/create-video',[VideoController::class,'store']);

@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             ClasseEcoleSeeder::class,
             EleveSeeder::class,
             ProfClasseEcoleSeeder::class,
+            MatiereSeeder::class
         ]);
     }
 }

@@ -18,7 +18,8 @@ class UserSeeder extends Seeder
         $responsableRole = Role::where('name', 'responsable')->first();
         for ($i = 1; $i <= 3; $i++) {
             User::create([
-                'name' => "Responsable $i",
+                'nom' => "Responsable $i",
+                "prenom"=> "Prenom $i",
                 'email' => "resp$i@example.com",
                 'password' => Hash::make('password'),
                 'role_id' => $responsableRole->id,
@@ -28,7 +29,8 @@ class UserSeeder extends Seeder
         $profRole = Role::where('name', 'professeur')->first();
         for ($i = 1; $i <= 3; $i++) {
             User::create([
-                'name' => "Professeur $i",
+                'nom' => "Professeur $i",
+                "prenom"=> "Prenom $i",
                 'email' => "prof$i@example.com",
                 'password' => Hash::make('password'),
                 'role_id' => $profRole->id,
