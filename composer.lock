@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f6dde95c2430ec0a1ec16567c076016c",
+    "content-hash": "151204846fe8b3ab1f31a46e043f2f5c",
     "packages": [
         {
             "name": "bamagid/laraswagger",

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\ApiController;
 use App\Http\Controllers\API\RoleController;
+use App\Http\Controllers\VideoController;
 use App\Http\Middleware\isSuperAdminMiddleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,7 @@ Route::group(['middleware' => 'auth:api'], function () {
 });
 
 Route::apiResource('role', RoleController::class)->middleware('superAdmin');
+Route::post('createVideo1', [VideoController::class, 'createVideo1']);
 
 //if user is not logged in
 Route::get('login-auth', function (){

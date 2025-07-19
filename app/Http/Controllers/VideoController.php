@@ -4,9 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\video;
 use Illuminate\Http\Request;
+use App\Services\GeminiService;
 
 class VideoController extends Controller
 {
+
+
+    public function createVideo1(Request $request)
+{
+    $prompt = $request->input('prompt');
+    $service = new \App\Services\GeminiService();
+
+    $operationId = $service->generateVideo1($prompt);
+
+    return response()->json(['operation_id' => $operationId]);
+}
+
+
     /**
      * Display a listing of the resource.
      */
@@ -62,4 +76,6 @@ class VideoController extends Controller
     {
         //
     }
+
+    
 }
