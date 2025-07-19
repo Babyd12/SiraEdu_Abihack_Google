@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
             $table->string('titre');
-            $table->text('description')->nullable();
+            $table->text('description');
             $table->string('url');
-            $table->string('langue');
+            $table->enum('langue', ['fr', 'en', 'ar', 'es']);
             $table->foreignId('matiere_id')->constrained()->onDelete('cascade');
             $table->foreignId('classe_id')->constrained()->onDelete('cascade');
             $table->foreignId('professeur_id')->constrained('users')->onDelete('cascade');

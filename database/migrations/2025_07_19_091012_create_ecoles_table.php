@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('ecoles', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
+            $table->string('logo');
+            $table->string('description')->nullable();
             $table->foreignId('user_id')->nullable()->constrained('users')->nullOnDelete();
             $table->timestamps();
         });

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Eleve extends Model
 {
     use HasFactory;
-    protected $fillable = ['nom', 'prenom', 'classe_id'];
+    protected $fillable = ['nom', 'prenom', 'email', 'password', 'classe_id'];
 
     public function classe()
     {
