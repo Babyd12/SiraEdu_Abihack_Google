@@ -17,6 +17,7 @@ class GeminiService
         $this->baseUrl  = config('gemini.base_url');
         $this->model    = config('gemini.default_model');
     }
+
     public function generateVideo(string $prompt, string $aspectRatio = '16:9', string $personGeneration = 'allow_all'): ?string
     {
         $url = $this->baseUrl . '/'.$this->model;
@@ -67,7 +68,8 @@ class GeminiService
             return null;
         }
     }
-      public function generateVideo1(string $prompt, string $aspectRatio = '16:9'): ?string
+      
+    public function generateVideo1(string $prompt, string $aspectRatio = '16:9'): ?string
     {
         $response = Http::withHeaders([
             'x-goog-api-key' => $this->apiKey,
@@ -89,7 +91,7 @@ class GeminiService
         return null;
     }
 
-   public function checkOperationStatus(string $operationName): ?array
+   public function checkOperationStatus1(string $operationName): ?array
     {
         $url = "{$this->baseUrl}/{$operationName}";
         $response = Http::withHeaders([
@@ -103,5 +105,5 @@ class GeminiService
         return null;
     }
 
-
+    
 }

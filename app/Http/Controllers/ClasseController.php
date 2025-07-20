@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Classe;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Http\JsonResponse;
+use App\Http\Requests\ClasseRequest;
+use App\Http\Resources\ClasseResource;
 use App\Http\Requests\StoreClasseRequest;
 use App\Http\Requests\UpdateClasseRequest;
 
@@ -11,56 +16,48 @@ class ClasseController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-    }
+        $classes = Classe::paginate();
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        return ClasseResource::collection($classes);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreClasseRequest $request)
+    public function store(ClasseRequest $request): JsonResponse
     {
-        //
+        $class = Classe::create($request->validated());
+
+        return response()->json(new ClasseResource($class));
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Classe $classe)
+    public function show(Classe $class): JsonResponse
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Classe $classe)
-    {
-        //
+        return response()->json(new ClasseResource($class));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateClasseRequest $request, Classe $classe)
+    public function update(ClasseRequest $request, Classe $class): JsonResponse
     {
-        //
+        $class->update($request->validated());
+
+        return response()->json(new ClasseResource($class));
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Delete the specified resource.
      */
-    public function destroy(Classe $classe)
+    public function destroy(Classe $class): Response
     {
-        //
+        $class->delete();
+
+        return response()->noContent();
     }
 }

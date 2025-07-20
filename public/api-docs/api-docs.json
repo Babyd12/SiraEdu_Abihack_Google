@@ -23,85 +23,6 @@
         "multipart/form-data"
     ],
     "paths": {
-        "/api/register": {
-            "post": {
-                "summary": "",
-                "tags": [
-                    "Apis"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Not Found",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "content": {
-                        "multipart/form-data": {
-                            "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "name": {
-                                        "type": "string"
-                                    },
-                                    "email": {
-                                        "type": "string"
-                                    },
-                                    "password": {
-                                        "type": "string"
-                                    },
-                                    "password_confirmation": {
-                                        "type": "string"
-                                    },
-                                    "role_id": {
-                                        "type": "integer",
-                                        "format": "int32"
-                                    }
-                                },
-                                "required": [
-                                    "name",
-                                    "email",
-                                    "password",
-                                    "role_id"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "parameters": [
-                    {
-                        "in": "header",
-                        "name": "User-Agent",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ]
-            }
-        },
         "/api/login": {
             "post": {
                 "summary": "",
@@ -142,7 +63,18 @@
                         "multipart/form-data": {
                             "schema": {
                                 "type": "object",
-                                "properties": []
+                                "properties": {
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "email",
+                                    "password"
+                                ]
                             }
                         }
                     }
@@ -204,139 +136,6 @@
                 ]
             }
         },
-        "/api/profile": {
-            "get": {
-                "summary": "",
-                "tags": [
-                    "Apis"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Not Found",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
-                            }
-                        }
-                    }
-                },
-                "parameters": [
-                    {
-                        "in": "header",
-                        "name": "User-Agent",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ]
-            }
-        },
-        "/api/update-profile/{user}": {
-            "put": {
-                "summary": "",
-                "tags": [
-                    "Apis"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Not Found",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "content": {
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "name": {
-                                        "type": "string"
-                                    },
-                                    "email": {
-                                        "type": "string"
-                                    },
-                                    "password": {
-                                        "type": "string"
-                                    },
-                                    "password_confirmation": {
-                                        "type": "string"
-                                    },
-                                    "role_id": {
-                                        "type": "integer",
-                                        "format": "int32"
-                                    }
-                                },
-                                "required": [
-                                    "name",
-                                    "email",
-                                    "password",
-                                    "role_id"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "user",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "in": "header",
-                        "name": "User-Agent",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ]
-            }
-        },
         "/api/refreshToken": {
             "get": {
                 "summary": "",
@@ -383,55 +182,11 @@
                 ]
             }
         },
-        "/api/role": {
-            "get": {
-                "summary": "",
-                "tags": [
-                    "Roles"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Not Found",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
-                            }
-                        }
-                    }
-                },
-                "parameters": [
-                    {
-                        "in": "header",
-                        "name": "User-Agent",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ]
-            },
+        "/api/v1-generate-video": {
             "post": {
                 "summary": "",
                 "tags": [
-                    "Roles"
+                    "Videos"
                 ],
                 "responses": {
                     "200": {
@@ -468,240 +223,28 @@
                             "schema": {
                                 "type": "object",
                                 "properties": {
-                                    "name": {
+                                    "promptText": {
                                         "type": "string"
                                     },
-                                    "description": {
+                                    "imageUrl": {
                                         "type": "string"
+                                    },
+                                    "duration": {
+                                        "type": "integer",
+                                        "format": "int32"
+                                    },
+                                    "ratio": {
+                                        "type": "string"
+                                    },
+                                    "seed": {
+                                        "type": "integer",
+                                        "format": "int32"
                                     }
                                 },
                                 "required": [
-                                    "name"
+                                    "promptText",
+                                    "imageUrl"
                                 ]
-                            }
-                        }
-                    }
-                },
-                "parameters": [
-                    {
-                        "in": "header",
-                        "name": "User-Agent",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ]
-            }
-        },
-        "/api/role/{role}": {
-            "get": {
-                "summary": "",
-                "tags": [
-                    "Roles"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Not Found",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
-                            }
-                        }
-                    }
-                },
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "role",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "in": "header",
-                        "name": "User-Agent",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ]
-            },
-            "put": {
-                "summary": "",
-                "tags": [
-                    "Roles"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Not Found",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "content": {
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "name": {
-                                        "type": "string"
-                                    },
-                                    "description": {
-                                        "type": "string"
-                                    }
-                                },
-                                "required": [
-                                    "name"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "role",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "in": "header",
-                        "name": "User-Agent",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ]
-            },
-            "delete": {
-                "summary": "",
-                "tags": [
-                    "Roles"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Not Found",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
-                            }
-                        }
-                    }
-                },
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "role",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "in": "header",
-                        "name": "User-Agent",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ]
-            }
-        },
-        "/api/login-auth": {
-            "get": {
-                "summary": "",
-                "tags": [
-                    "Autres"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Not Found",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "content": {
-                            "application/json": {
-                                "schema": [],
-                                "example": ""
                             }
                         }
                     }
@@ -785,9 +328,6 @@
                                     },
                                     "matiere_id": {
                                         "type": "string"
-                                    },
-                                    "professeur_id": {
-                                        "type": "string"
                                     }
                                 },
                                 "required": [
@@ -795,14 +335,593 @@
                                     "prompt",
                                     "langue",
                                     "classe_id",
-                                    "matiere_id",
-                                    "professeur_id"
+                                    "matiere_id"
                                 ]
                             }
                         }
                     }
                 },
                 "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/api/ecoles": {
+            "get": {
+                "summary": "",
+                "tags": [
+                    "Ecoles"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            },
+            "post": {
+                "summary": "",
+                "tags": [
+                    "Ecoles"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "nom": {
+                                        "type": "string"
+                                    },
+                                    "logo": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "user_id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "nom",
+                                    "user_id"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/api/ecoles/{ecole}": {
+            "get": {
+                "summary": "",
+                "tags": [
+                    "Ecoles"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "ecole",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            },
+            "put": {
+                "summary": "",
+                "tags": [
+                    "Ecoles"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "nom": {
+                                        "type": "string"
+                                    },
+                                    "logo": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "user_id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "nom",
+                                    "user_id"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "ecole",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            },
+            "delete": {
+                "summary": "",
+                "tags": [
+                    "Ecoles"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "ecole",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/api/classes": {
+            "get": {
+                "summary": "",
+                "tags": [
+                    "Classes"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            },
+            "post": {
+                "summary": "",
+                "tags": [
+                    "Classes"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "nom": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/api/classes/{class}": {
+            "get": {
+                "summary": "",
+                "tags": [
+                    "Classes"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "class",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            },
+            "put": {
+                "summary": "",
+                "tags": [
+                    "Classes"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "nom": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "class",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            },
+            "delete": {
+                "summary": "",
+                "tags": [
+                    "Classes"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": [],
+                                "example": ""
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "class",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
                     {
                         "in": "header",
                         "name": "User-Agent",
